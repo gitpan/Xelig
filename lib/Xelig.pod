@@ -1,42 +1,37 @@
 =head1 NAME
 
-    Xelig
-
-=head1 SUMMARY
-
-    A Model-View-Controller Presentation Framework
+    Xelig - A Model-View-Controller Presentation Framework
 
 =head1 DESCRIPTION
 
-    Xelig is a Model-View-Controller Presentation Framework
-    inspired by Enhydra's XMLC. Unlike the other 36000
-    XML Template Toolkits, Xelig aspires to offer a genuine
-    separation of layout and logic, data and design.
+Xelig is a Model-View-Controller Presentation Framework
+inspired by Enhydra's XMLC.
 
-    Documentation will trickle out shortamundo.
+Unlike the other 36000 XML Template Toolkits, Xelig aspires
+to offer a genuine separation of layout and logic, data and design.
 
-    Model:	    
+Model:	    
 
-	The data to be exported into an XML (XHTML &c)
-	visual representation
+    The data to be exported into an XML (XHTML &c)
+    visual representation
 
-    View:	    
+View:	    
 
-	The visual 'skin' for that data
+    The visual 'skin' for that data
 
-    Controller: 
+Controller: 
 
-	An object generated from an XML file that governs
-	how the Model is mapped into the View
+    An object generated from an XML file that governs
+    how the Model is mapped into the View
 
-    The same piece of data (Model) can be given a variety of
-    different skins (Views).
+The same piece of data (Model) can be given a variety of
+different skins (Views).
 
-    Likewise the same View can be wrapped around a
-    number of different Models.
+Likewise the same View can be wrapped around a number of
+different Models.
 
-    The linkage between the two is configured in the
-    Controller's XML 'patchbay'.
+The linkage between the two is configured in the
+Controller's XML 'patchbay'.
 
 =head1 SYNOPSIS
 
@@ -102,8 +97,8 @@
     XML::Parser
     XML::Simple
 
-    In addition, due to limited support for weak references
-    in older perls, Xelig only works with perl(s) >= 5.8.0
+In addition, due to limited support for weak references
+in older perls, Xelig only works with perl(s) >= 5.8.0
 
 =head1 INSTALLATION AND CONFIGURATION
 
@@ -119,22 +114,26 @@
 
 =head1 AVOID
 
-    XSLT, Template::Toolkit, Mason, HTML::Template, PHP,
-    JSP, ASP, PageKit, EmbPerl, ePerl, ZPT, TAL &c.
+XSLT, Template::Toolkit, Mason, HTML::Template, PHP,
+JSP, ASP, PageKit, EmbPerl, ePerl, ZPT, TAL &c.
 
 =head1 COPYRIGHT
 
-    Copyright (c) 2003 chocolateboy
+Copyright (c) 2000-2003 chocolateboy
 
-    This library is free software; you can redistribute
-    it and/or modify it under the same terms as Perl
-    itself. 
+This library is free software; you can redistribute
+it and/or modify it under the same terms as Perl
+itself. 
+
+L<http://www.gnu.org/copyleft/gpl.html>
+
+L<http://www.perl.com/language/misc/Artistic.html>
 
 =head1 BUGS
 
-    APIs are likely to change dramatically
+APIs are likely to change dramatically
 
-    No documentation/tutorial/FAQ/examples/tests
+TODO: documentation/tutorial/FAQ/examples/tests
 
 =head1 AUTHOR
 
@@ -142,6 +141,6 @@
 
 =head1 VERSION
 
-    0.01
+    0.02
 
 =cut

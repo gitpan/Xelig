@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+>
+
+<channel rdf:about="http://slashdot.org/">
+<title>Slashdot</title>
+<link>http://slashdot.org/</link>
+<description>News for nerds, stuff that matters</description>
+<dc:language>en-us</dc:language>
+<dc:rights>Copyright &amp;copy; 1997-2001, OSDN</dc:rights>
+<dc:date>2003-05-23T13:43:13+00:00</dc:date>
+<dc:publisher>OSDN</dc:publisher>
+<dc:creator>pater@slashdot.org</dc:creator>
+<dc:subject>Technology</dc:subject>
+<syn:updatePeriod>hourly</syn:updatePeriod>
+<syn:updateFrequency>1</syn:updateFrequency>
+<syn:updateBase>1970-01-01T00:00+00:00</syn:updateBase>
+<items>
+ <rdf:Seq>
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/23/1217233" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/23/0534208" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/23/0521222" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/23/049214" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/22/1236213" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/23/0133202" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/22/234212" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/22/2247200" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/22/2216247" />
+  <rdf:li rdf:resource="http://slashdot.org/article.pl?sid=03/05/22/2017244" />
+ </rdf:Seq>
+</items>
+<image rdf:resource="http://images.slashdot.org/topics/topicslashdot.gif" />
+<textinput rdf:resource="http://slashdot.org/search.pl" />
+</channel>
+
+<image rdf:about="http://images.slashdot.org/topics/topicslashdot.gif">
+<title>Slashdot</title>
+<url>http://images.slashdot.org/topics/topicslashdot.gif</url>
+<link>http://slashdot.org/</link>
+</image>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/23/1217233">
+<title>Inside Microsoft's New F# Language</title>
+<link>http://slashdot.org/article.pl?sid=03/05/23/1217233</link>
+<description>robyn217 writes "There's a new language being formed in the bowels of Microsoft. Recently I got word that the language F# (pronounced F Sharp) is nearing ...</description>
+<dc:creator>michael</dc:creator>
+<dc:subject>microsoft</dc:subject>
+<dc:date>2003-05-23T12:56:18+00:00</dc:date>
+<slash:department>e-flat</slash:department>
+<slash:section>developers</slash:section>
+<slash:comments>138</slash:comments>
+<slash:hitparade>138,129,87,48,17,9,8</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/23/0534208">
+<title>ATI vs. NVIDIA: ATI Steals the Show</title>
+<link>http://slashdot.org/article.pl?sid=03/05/23/0534208</link>
+<description>(54)T-Dub writes "Apparently a group of MIT engineers made an OpenGL wrapper for the NVidia Demo of 'Dawn.' (a fairy with high sex appeal) Even though the ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>graphics</dc:subject>
+<dc:date>2003-05-23T12:02:02+00:00</dc:date>
+<slash:department>video-card-shootout</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>197</slash:comments>
+<slash:hitparade>197,179,127,79,24,14,9</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/23/0521222">
+<title>Trend Micro Quarantines Letter P</title>
+<link>http://slashdot.org/article.pl?sid=03/05/23/0521222</link>
+<description>kkenedy writes "I thought this was the funniest thing I have read in a long time: CRN reports that a bug in an update to one of Trend Micro's security products ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>bug</dc:subject>
+<dc:date>2003-05-23T10:14:16+00:00</dc:date>
+<slash:department>unintended-behaviors</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>137</slash:comments>
+<slash:hitparade>137,124,103,66,37,24,18</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/23/049214">
+<title>Semiconductor Technologies Guide</title>
+<link>http://slashdot.org/article.pl?sid=03/05/23/049214</link>
+<description>An anonymous reader writes "X-bit labs have posted an interesting article on manufacturing technologies used in the semiconductor industry. Good reading if you ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>hardware</dc:subject>
+<dc:date>2003-05-23T07:06:59+00:00</dc:date>
+<slash:department>time-to-make-the-chips</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>66</slash:comments>
+<slash:hitparade>66,19,11,9,7,5,4</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/22/1236213">
+<title>Ant Farm PC</title>
+<link>http://slashdot.org/article.pl?sid=03/05/22/1236213</link>
+<description>secolactico writes "This has got to be the coolest case mod I've come across. An ant farm in your PC case. Too bad there are no pics of the case actually on a ...</description>
+<dc:creator>michael</dc:creator>
+<dc:subject>hardware</dc:subject>
+<dc:date>2003-05-23T03:45:48+00:00</dc:date>
+<slash:department>shake-to-reboot</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>263</slash:comments>
+<slash:hitparade>263,235,178,102,50,26,8</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/23/0133202">
+<title>SGI Announces Restructuring, Cuts 400 Jobs</title>
+<link>http://slashdot.org/article.pl?sid=03/05/23/0133202</link>
+<description>kerneljacabo writes "Yikes! SGI seems to be the lastest victim of the economic downturn. Today they announced an extensive 'restructuring,' which includes ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>sgi</dc:subject>
+<dc:date>2003-05-23T02:19:52+00:00</dc:date>
+<slash:department>downsized-layoffs</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>264</slash:comments>
+<slash:hitparade>264,244,170,100,39,25,14</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/22/234212">
+<title>Canadian University to Begin Training Hackers</title>
+<link>http://slashdot.org/article.pl?sid=03/05/22/234212</link>
+<description>torok writes "According to an article at The Edmonton Journal, The University of Calgary is going to start teaching select computer science students to write ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>security</dc:subject>
+<dc:date>2003-05-23T00:45:17+00:00</dc:date>
+<slash:department>learning-from-the-other-side</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>322</slash:comments>
+<slash:hitparade>322,307,224,144,60,38,24</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/22/2247200">
+<title>Is the Seeking of Lost Skills/Arts a Hacking Analog?</title>
+<link>http://slashdot.org/article.pl?sid=03/05/22/2247200</link>
+<description>bigattichouse asks: "Having just finished my first batch of home-brew beer, I've been thinking about my attraction to 'lost arts', and collecting books on 'how ...</description>
+<dc:creator>Cliff</dc:creator>
+<dc:subject>ed</dc:subject>
+<dc:date>2003-05-22T23:32:23+00:00</dc:date>
+<slash:department>hack-the-world-without-a-keyboard</slash:department>
+<slash:section>askslashdot</slash:section>
+<slash:comments>635</slash:comments>
+<slash:hitparade>635,619,472,258,64,38,28</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/22/2216247">
+<title>802.11g Slows Down</title>
+<link>http://slashdot.org/article.pl?sid=03/05/22/2216247</link>
+<description>Moosifer writes "Computerworld reports that in order to step on fewer 802.11b toes, the IEEE has reduced the actual throughput of 802.11g in its latest (and ...</description>
+<dc:creator>CowboyNeal</dc:creator>
+<dc:subject>wireless</dc:subject>
+<dc:date>2003-05-22T22:42:35+00:00</dc:date>
+<slash:department>whoa-there-partner</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>272</slash:comments>
+<slash:hitparade>272,266,197,124,53,34,18</slash:hitparade>
+</item>
+
+<item rdf:about="http://slashdot.org/article.pl?sid=03/05/22/2017244">
+<title>Transparent Screens on the Horizon?</title>
+<link>http://slashdot.org/article.pl?sid=03/05/22/2017244</link>
+<description>mhesseltine writes "According to United Press, researchers in Japan are developing transparent transistors. This could bring about see-through screens like ...</description>
+<dc:creator>CmdrTaco</dc:creator>
+<dc:subject>displays</dc:subject>
+<dc:date>2003-05-22T21:37:03+00:00</dc:date>
+<slash:department>i-lost-my-monitor</slash:department>
+<slash:section>articles</slash:section>
+<slash:comments>214</slash:comments>
+<slash:hitparade>214,204,160,93,41,25,20</slash:hitparade>
+</item>
+
+<textinput rdf:about="http://slashdot.org/search.pl">
+<title>Search Slashdot</title>
+<description>Search Slashdot stories</description>
+<name>query</name>
+<link>http://slashdot.org/search.pl</link>
+</textinput>
+
+</rdf:RDF>

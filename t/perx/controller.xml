@@ -1,0 +1,15 @@
+<controller strict="0"> 
+    <template id="title" target="0=~$" />
+    <template id="count" target="@value" />
+    <template id="channel">
+	<alias from="title">channel_title /title</alias>
+	<alias from="link">channel_link</alias>
+    </template>
+    <template re="channel_" target="@value" />
+    <template id="item" class="Sequencer">
+	<alias from="title">item_title</alias>
+	<alias from="link">item_link</alias>
+	<alias from="index">item_title/@name=~\d+$ item_link/@name=~\d+$</alias>
+    </template>
+    <template re="item_" target="@value" />
+</controller>

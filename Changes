@@ -1,8 +1,13 @@
 Revision history for Perl extension Xelig.
 
+0.02  Fri May 23 17:19:00 2003
+	- Cygwin CR/LF endings were breaking simple.t on Unix
+	- Fixed invalid representation of commented templates
+	- Added perx.t test/example: map RSS into HTML for Per Dahlberg's
+	  FixFontHeadlines applet
+
 0.01  Wed Dec 11 13:53:55 2002
 	- original version; created by h2xs 1.22 with options
-		-n Xelig
+	    -n Xelig
 	- separated documentation (such as it is) into Xelig.pod
 	- removed Xelig::SiteBuilder
-

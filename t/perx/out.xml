@@ -1,0 +1,76 @@
+<html>
+    <head>
+	<title id="title">RSS Ticker: Slashdot</title>
+	<style type="text/css">
+	<!--
+
+	 .applet { 
+	     left:	    425;
+	     top:	    308;
+	     position:	    absolute;
+	     visibility:    visible;
+	 }
+
+	-->
+	</style>
+    </head>
+    <body bgcolor="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+	<div class="applet">
+	    <applet code="FixFontHeadlines.class" codebase="/java/ticker/" width="300" height="60">
+		<param value="10" name="num" id="count" />
+		<!-- #BeginEditable "channel" -->
+		<param value="Slashdot" name="text1" id="channel_title" />
+		<param value="http://slashdot.org/" name="link1" id="channel_link" />
+		<!-- #EndEditable -->
+		<!-- <xelig id="item"> -->
+		<param value="Inside Microsoft's New F# Language" name="text1" id="item_title" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/23/1217233" name="link1" id="item_link" />
+		<!-- </xelig> -->
+		
+		<param value="ATI vs. NVIDIA: ATI Steals the Show" name="text2" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/23/0534208" name="link2" />
+		
+		<param value="Trend Micro Quarantines Letter P" name="text3" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/23/0521222" name="link3" />
+		
+		<param value="Semiconductor Technologies Guide" name="text4" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/23/049214" name="link4" />
+		
+		<param value="Ant Farm PC" name="text5" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/22/1236213" name="link5" />
+		
+		<param value="SGI Announces Restructuring, Cuts 400 Jobs" name="text6" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/23/0133202" name="link6" />
+		
+		<param value="Canadian University to Begin Training Hackers" name="text7" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/22/234212" name="link7" />
+		
+		<param value="Is the Seeking of Lost Skills/Arts a Hacking Analog?" name="text8" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/22/2247200" name="link8" />
+		
+		<param value="802.11g Slows Down" name="text9" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/22/2216247" name="link9" />
+		
+		<param value="Transparent Screens on the Horizon?" name="text10" />
+		<param value="http://slashdot.org/article.pl?sid=03/05/22/2017244" name="link10" />
+		<param name="backgroundColor" value="96,200,1" />
+		<param name="borderColor" value="255,255,255" />
+		<param name="textColor" value="30,42,30" />
+		<param name="textFont" value="Arial,Helvetica" />
+		<param name="textFontSize" value="8" />
+		<param name="textFontType" value="plain" />
+		<param name="headingColor" value="60,92,60" />
+		<param name="headingFont" value="Arial,Helvetica" />
+		<param name="headingFontSize" value="10" />
+		<param name="headingFontType" value="normal" />
+		<param name="speed" value="50" />
+		<param name="step" value="25" />
+		<param name="pause" value="3500" />
+		<param name="align" value="center" />
+		<param name="valign" value="middle" />
+		<param name="frame" value="New" />
+		<param name="border" value="0" />
+	    </applet>
+	</div>
+    </body>
+</html>

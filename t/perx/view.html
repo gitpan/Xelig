@@ -1,0 +1,49 @@
+<html>
+    <head>
+	<title id="title">RSS Ticker: </title>
+	<style type="text/css">
+	<!--
+
+	 .applet { 
+	     left:	    425;
+	     top:	    308;
+	     position:	    absolute;
+	     visibility:    visible;
+	 }
+
+	-->
+	</style>
+    </head>
+    <body bgcolor="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+	<div class="applet">
+	    <applet code="FixFontHeadlines.class" codebase="/java/ticker/" width="300" height="60">
+		<param id="count" name="num" value="1" />
+		<!-- #BeginEditable "channel" -->
+		<param id="channel_title" name="text1" value="Don&#39;t Panic!" />
+		<param id="channel_link" name="link1" value="mailto:chocolate.boy@email.com" />
+		<!-- #EndEditable -->
+		<!-- <xelig id="item"> -->
+		<param id="item_title" name="text2" value="Don&#39;t Panic!" />
+		<param id="item_link" name="link2" value="mailto:chocolate.boy@email.com" />
+		<!-- </xelig> -->
+		<param name="backgroundColor" value="96,200,1" />
+		<param name="borderColor" value="255,255,255" />
+		<param name="textColor" value="30,42,30" />
+		<param name="textFont" value="Arial,Helvetica" />
+		<param name="textFontSize" value="8" />
+		<param name="textFontType" value="plain" />
+		<param name="headingColor" value="60,92,60" />
+		<param name="headingFont" value="Arial,Helvetica" />
+		<param name="headingFontSize" value="10" />
+		<param name="headingFontType" value="normal" />
+		<param name="speed" value="50" />
+		<param name="step" value="25" />
+		<param name="pause" value="3500" />
+		<param name="align" value="center" />
+		<param name="valign" value="middle" />
+		<param name="frame" value="New" />
+		<param name="border" value="0" />
+	    </applet>
+	</div>
+    </body>
+</html>

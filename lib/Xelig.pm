@@ -5,7 +5,7 @@ use warnings;
 
 use base qw(Exporter);
 our @EXPORT_OK = qw(MVC);
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 sub MVC {
     my ($model, $view, $controller_arg) = @_;
@@ -294,13 +294,8 @@ sub end {
 	my $last = $self->{LAST};
 	my $buffer = $self->{BUFFER};
 
-	# printf STDERR "end_id: '%s'%s", $this->id(), $/; 
-	# printf STDERR "end_last: '%s'%s", $last || '', $/;
-	# printf STDERR "end_buffer: '%s'%s", escape $buffer, $/; 
-
 	if ($last) {
 	    my ($suffix) = ($buffer =~ m{^\s*?($/?[ \t\f]*)});
-	    # printf STDERR "end_suffix: '%s'%s", escape $suffix, $/;
 	    $last->suffix($suffix);
 	}
 	# print STDERR $/;
@@ -328,7 +323,6 @@ sub start {
 
     my $last = $self->{LAST};
     my $buffer = $self->{BUFFER};
-    # printf STDERR "start_buffer: '%s'%s", escape $buffer, $/; 
     my ($prefix) = $+ if ($self->{BUFFER} =~ s{($/?[ \t\f]*)$}{});
 
     # printf STDERR "start_id: '%s'%s", $template->id(), $/; 
@@ -336,11 +330,8 @@ sub start {
 
     $template->prefix($prefix) if (defined $prefix);
 
-    # printf STDERR "start_prefix: '%s'%s", escape $prefix, $/;
-
     if ($last) {
 	my ($suffix) = ($buffer =~ m{^\s*?($/?[ \t\f]*)});
-	# printf STDERR "start_suffix: '%s'%s", escape $suffix, $/;
 	$last->suffix($suffix) if (defined $suffix);
     }
 
@@ -410,9 +401,9 @@ use strict;
 use warnings;
 
 # Util::clone requires a Perl_magick_backref-using
-# implementation of Perl for clone to work with weak
+# implementation of Perl in order to work with weak
 # references.
-# FIXME: check to see if this is supported by an older perls
+# FIXME: check to see if this is supported by older perls
 
 use 5.008_000;
 
@@ -420,8 +411,6 @@ use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
 use Carp qw(confess);
 use Util;
 use Scalar::Util qw(weaken isweak);
-
-# TODO 'require' a recent Perl
 
 sub new {
     my $class = shift;
@@ -1096,17 +1085,6 @@ sub copy {
     return $copy;
 }
 
-sub escape ($) {
-    my $text = shift;
-    return '' unless (defined $text);
-    $text =~ s/\r/\\r/g;
-    $text =~ s/\n/\\n/g;
-    $text =~ s/ /%/g;
-    $text =~ s/\t/\\t/g;
-    $text =~ s/\f/\\f/g;
-    return $text;
-}
-
 sub append {
     my ($self, $sibling, $parent) = @_;
     unless ($parent ||= $self->parent()) {
@@ -1114,9 +1092,6 @@ sub append {
 	    $self->id); 
     }
     $sibling->{APPENDED} = 1;
-    # $sibling->{ATTRIBUTES}->{appendix} = $sibling->{APPENDED} = 1;
-    # $sibling->{ATTRIBUTES}->{prefix} = escape($sibling->prefix);
-    # $sibling->{ATTRIBUTES}->{suffix} = escape($sibling->suffix);
     $parent->insert($sibling, $self->position($parent) + 1);
     return $self;
 }
@@ -1192,7 +1167,7 @@ sub xml {
 		if ($degenerate) {
 		    ($start, $end, $content) = ("<!-- <%s%s", " /> -->", '');
 		} else {
-		    ($start, $end) = ("<!-- <%s%s>", "</%s> -->");
+		    ($start, $end) = ("<!-- <%s%s> -->", "<!-- </%s> -->");
 		}
 	    }
 	} else {

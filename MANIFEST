@@ -1,6 +1,4 @@
-Artistic
 Changes
-COPYING
 lib/Xelig.pm
 lib/Xelig.pod
 Makefile.PL
@@ -8,4 +6,9 @@ MANIFEST
 README
 t/simple/out.xml
 t/simple/view.xml
+t/perx/controller.xml
+t/perx/out.xml
+t/perx/view.html
+t/perx/model.rss
 t/simple.t
+t/perx.t

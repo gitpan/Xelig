@@ -1,12 +1,10 @@
-Xelig version 0.01
+Xelig version 0.02
 ==================
 
 Xelig is a Model-View-Controller Presentation Framework
 inspired by Enhydra's XMLC. Unlike the other 36000 XML
-XML Template Frameworks, Xelig aspires to offer a genuine
+Template Frameworks, Xelig aspires to offer a genuine
 separation of layout and logic, data and design.
-
-Documentation will trickle out shortamundo.
 
 Model:	    
 
