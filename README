@@ -1,4 +1,4 @@
-Xelig version 0.03
+Xelig version 0.04
 ==================
 
 Xelig is a Model-View-Controller Presentation Framework
@@ -42,7 +42,7 @@ DEPENDENCIES
 
 This module requires a few other modules:
 
-  Util
+  Acme::Util
   Scalar::Util
   XML::Parser
   XML::Simple

@@ -17,7 +17,7 @@ BEGIN {
     chdir 't' if -d 't';
     unshift @INC, '../lib';
     use_ok ('Xelig', 'MVC');
-    use_ok ('Util', 'readfile');
+    use_ok ('Acme::Util', 'readfile');
     use_ok ('XML::Simple');
 }
 

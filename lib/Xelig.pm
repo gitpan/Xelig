@@ -5,7 +5,7 @@ use warnings;
 
 use base qw(Exporter);
 our @EXPORT_OK = qw(MVC);
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 sub MVC {
     my ($model, $view, $controller_arg) = @_;
@@ -21,7 +21,7 @@ use strict;
 use warnings;
 
 use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
-use Util;
+use Acme::Util;
 use Carp qw(confess);
 use XML::Simple; $XML::Simple::PREFERRED_PARSER = 'XML::Parser'; # XML::SAX is evil
 
@@ -59,11 +59,16 @@ sub new {
     my $default_strict	    = $default->{STRICT};
     my $forcearray	    = $self->{FORCEARRAY} || [ qw (template ignore alias) ];
 
-    my $xmlin = XMLin($path, 
-	forcearray  => $forcearray,
-	contentkey  => '#',
-	keyattr	    => [ ],
-    ) || '';	# returns an array of template HASH refs
+    my $xmlin;
+    # FIXME: this (XMLin) should be inside some kind of try/catch block
+    {
+	local $XML::Simple::PREFERRED_PARSER = 'XML::Parser'; # XML::SAX is evil
+	$xmlin = XMLin($path, 
+	    forcearray  => $forcearray,
+	    contentkey  => '#',
+	    keyattr	    => [ ],
+	) || '';	# returns an array of template HASH refs
+    }
 
     unless (ref $xmlin eq 'HASH') {
 	confess ("new: invalid configuration file: expected XML::Simple::XMLin" .
@@ -180,11 +185,11 @@ sub lookup {
     
     if ($lookup_id->{$id}) {
 	# squashed megabug: clone even if 'unique' id-based in case controller is reused
-        $prototype = Util::clone($lookup_id->{$id});
+        $prototype = Acme::Util::clone($lookup_id->{$id});
     } else {
         for my $pattern (keys %$lookup_re) {
             next unless ($id =~ /$pattern/i);
-            $prototype = Util::clone($lookup_re->{$pattern});
+            $prototype = Acme::Util::clone($lookup_re->{$pattern});
         }
     }
 
@@ -203,7 +208,7 @@ package Xelig::Parser;
 
 use strict;
 use warnings;
-use Util qw(xmlparse);
+use Acme::Util qw(xmlparse);
 use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
 use Carp qw(confess);
 
@@ -400,7 +405,7 @@ package Xelig::Template;
 use strict;
 use warnings;
 
-# Util::clone requires a Perl_magick_backref-using
+# Acme::Util::clone requires a Perl_magick_backref-using
 # implementation of Perl in order to work with weak
 # references.
 # FIXME: check to see if this is supported by older perls
@@ -409,7 +414,7 @@ use 5.008_000;
 
 use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
 use Carp qw(confess);
-use Util qw(ltrim rtrim); # trim()s to work around <alias ... /> bug (see handle_alias)
+use Acme::Util qw(ltrim rtrim); # trim()s to work around <alias ... /> bug (see handle_alias)
 use Scalar::Util qw(weaken isweak);
 
 sub new {
@@ -1034,7 +1039,7 @@ sub anonymize {
     delete $self->{ATTRIBUTES}->{id} unless ($self->{DO_NOT_ANONYMIZE});
     # took out the feeble attempt at unique clone identification
     # (by assigning sequential numbers to the clone field),
-    # as export() uses the lightweight (i.e. fast) Util::clone() - which
+    # as export() uses the lightweight (i.e. fast) Acme::Util::clone() - which
     # doesn't re-uniquify the new clone or its descendants - for the bulk
     # of its clonage; in addition, if unique naming was ever seriously
     # needed (it was only ever used for debug purposes), it would be much
@@ -1067,16 +1072,16 @@ sub clone {
     # optimization in the whole framework.
     # Take out the parent before cloning, otherwise the whole tree ends up being cloned!
 
-    # my $clone = Util::clone($self, [ $self->{PARENT} ]);
+    # my $clone = Acme::Util::clone($self, [ $self->{PARENT} ]);
     my $parent = delete $self->{PARENT};
-    my $clone = Util::clone($self);
+    my $clone = Acme::Util::clone($self);
     weaken ($self->{PARENT} = $parent);
     confess ("post-clone parent link is no longer weak: " . Dumper($self))
 	unless (isweak $self->{PARENT});
     # The following 2 lines may bench faster than the previous 2,
     # but need to be re-tested for correctness and speed: 
 
-    # my $clone = Util::clone($self, [ $self->{PARENT} ]);
+    # my $clone = Acme::Util::clone($self, [ $self->{PARENT} ]);
     # delete $clone->{PARENT};
 
     $clone->anonymize(); # returns $clone
@@ -1226,13 +1231,13 @@ sub xml {
 	    # First update the original template, thereafter update the clones
 
 	    if ($last) {
-		$clone = Util::clone($prototype);
-		# print STDERR "Util::clone ctor: $clone", $/;
+		$clone = Acme::Util::clone($prototype);
+		# print STDERR "Acme::Util::clone ctor: $clone", $/;
 	    } else {
 		$clone = $self;
 	    }
 
-	    # $clone = $last ? Util::clone($prototype) : $self;
+	    # $clone = $last ? Acme::Util::clone($prototype) : $self;
 
 	    # $clone->target() could be pulled out of this loop if we assume
 	    # that the prototype and all its clones share the same target

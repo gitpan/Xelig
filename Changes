@@ -1,5 +1,9 @@
 Revision history for Perl extension Xelig.
 
+0.04  Mon Dec  8 11:01:59 2003
+	- migrated from Util to Acme::Util
+	- doc tweak
+
 0.03  Fri Jul 04 12:53:19 2003
 	- Fixed bug that caused corrupt output if
 	  aliased content had leading or trailing space

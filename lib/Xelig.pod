@@ -12,8 +12,7 @@ to offer a genuine separation of layout and logic, data and design.
 
 Model:	    
 
-    The data to be exported into an XML (XHTML &c)
-    visual representation
+    The data to be exported into an XML (XHTML &c) visual representation
 
 View:	    
 
@@ -21,8 +20,7 @@ View:
 
 Controller: 
 
-    An object generated from an XML file that governs
-    how the Model is mapped into the View
+    An object generated from an XML file that governs how the Model is mapped into the View
 
 The same piece of data (Model) can be given a variety of
 different skins (Views).
@@ -92,7 +90,7 @@ Controller's XML 'patchbay'.
 
 =head1 PREREQUISITES
 
-    Util
+    Acme::Util
     Scalar::Util
     XML::Parser
     XML::Simple
@@ -109,13 +107,8 @@ in older perls, Xelig only works with perl(s) >= 5.8.0
 
 =head1 SEE ALSO
 
+    HTML::Seamstress
     Enhydra XMLC: http://xmlc.enhydra.org/
-    Struts:	  http://jakarta.apache.org/struts/
-
-=head1 AVOID
-
-XSLT, Template::Toolkit, Mason, HTML::Template, PHP,
-JSP, ASP, PageKit, EmbPerl, ePerl, ZPT, TAL &c.
 
 =head1 COPYRIGHT
 
@@ -131,9 +124,7 @@ L<http://www.perl.com/language/misc/Artistic.html>
 
 =head1 BUGS
 
-APIs are likely to change dramatically
-
-TODO: documentation/tutorial/FAQ/examples/tests
+    TODO: documentation/tutorial/FAQ/examples/tests
 
 =head1 AUTHOR
 
@@ -141,6 +132,6 @@ TODO: documentation/tutorial/FAQ/examples/tests
 
 =head1 VERSION
 
-    0.03
+    0.04
 
 =cut

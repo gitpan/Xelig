@@ -1,18 +1,19 @@
 Changes
+MANIFEST
+Makefile.PL
+README
 lib/Xelig.pm
 lib/Xelig.pod
-Makefile.PL
-MANIFEST
-README
+t/perx.t
 t/perx/controller.xml
 t/perx/model.rss
 t/perx/out.xml
-t/perx.t
 t/perx/view.html
-t/simple/out.xml
 t/simple.t
+t/simple/out.xml
 t/simple/view.xml
+t/space_alias.t
 t/space_alias/controller.xml
 t/space_alias/out.xml
-t/space_alias.t
 t/space_alias/view.xml
+META.yml                                 Module meta-data (added by MakeMaker)
