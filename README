@@ -1,0 +1,60 @@
+Xelig version 0.01
+==================
+
+Xelig is a Model-View-Controller Presentation Framework
+inspired by Enhydra's XMLC. Unlike the other 36000 XML
+XML Template Frameworks, Xelig aspires to offer a genuine
+separation of layout and logic, data and design.
+
+Documentation will trickle out shortamundo.
+
+Model:	    
+
+    The data to be exported into an XML (XHTML &c)
+    visual representation
+
+View:	    
+
+    The visual 'skin' for that data
+
+Controller: 
+
+    An object generated from an XML file that governs
+    how the Model is mapped into the View
+
+The same piece of data (Model) can be given a variety of
+different skins (Views).
+
+Likewise the same View can be wrapped around a
+number of different Models.
+
+The linkage between the two is configured in the
+Controller's XML 'patchbay'.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires a few other modules:
+
+  Util
+  Scalar::Util
+  XML::Parser
+  XML::Simple
+
+  In addition, due to limited support for weak references in older
+  versions, Xelig only works with Perl(s) >= 5.8.0
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2000-2003 chocolateboy <chocolate.boy@email.com>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 

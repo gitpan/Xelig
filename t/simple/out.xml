@@ -1,0 +1,15 @@
+<example>
+    <foo id="foo">
+	<alpha id="alpha">beta</alpha>
+	<beta id="beta">band</beta>
+	<gamma id="gamma">vlissides</gamma>
+	<delta id="delta">blues</delta>
+    </foo>
+    <foo>
+	<alpha>bravo</alpha>
+	<beta>blockers</beta>
+	<gamma>delta</gamma>
+	<delta>echo</delta>
+    </foo>
+    <bar id="bar">baz</bar>
+</example>

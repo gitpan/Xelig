@@ -1,0 +1,147 @@
+=head1 NAME
+
+    Xelig
+
+=head1 SUMMARY
+
+    A Model-View-Controller Presentation Framework
+
+=head1 DESCRIPTION
+
+    Xelig is a Model-View-Controller Presentation Framework
+    inspired by Enhydra's XMLC. Unlike the other 36000
+    XML Template Toolkits, Xelig aspires to offer a genuine
+    separation of layout and logic, data and design.
+
+    Documentation will trickle out shortamundo.
+
+    Model:	    
+
+	The data to be exported into an XML (XHTML &c)
+	visual representation
+
+    View:	    
+
+	The visual 'skin' for that data
+
+    Controller: 
+
+	An object generated from an XML file that governs
+	how the Model is mapped into the View
+
+    The same piece of data (Model) can be given a variety of
+    different skins (Views).
+
+    Likewise the same View can be wrapped around a
+    number of different Models.
+
+    The linkage between the two is configured in the
+    Controller's XML 'patchbay'.
+
+=head1 SYNOPSIS
+
+    use Xelig qw(MVC);
+
+    my $model = {
+	foo => [
+	    {
+		alpha   => 'beta',
+		beta    => 'band',
+		gamma   => 'vlissides',
+		delta   => 'blues'
+	    },
+	    {
+		alpha   => 'bravo',
+		beta    => 'blockers',
+		gamma   => 'delta',
+		delta   => 'echo'
+	    },
+	],
+	bar => 'baz' 
+    };
+
+    my $view = 'view.xml';
+    my $template = MVC($model, $view); # default controller
+
+    print $template->content();
+
+=head2 view.xml
+
+    <example>
+	<foo id="foo">
+	    <alpha id="alpha"></alpha>
+	    <beta id="beta"></beta>
+	    <gamma id="gamma"></gamma>
+	    <delta id="delta"></delta>
+	</foo>
+	<bar id="bar"></bar>
+    </example>
+
+=head2 output
+
+    <example>
+	<foo id="foo">
+	    <alpha id="alpha">beta</alpha>
+	    <beta id="beta">band</beta>
+	    <gamma id="gamma">vlissides</gamma>
+	    <delta id="delta">blues</delta>
+	</foo>
+	<foo>
+	    <alpha>bravo</alpha>
+	    <beta>blockers</beta>
+	    <gamma>delta</gamma>
+	    <delta>echo</delta>
+	</foo>
+	<bar id="bar">baz</bar>
+    </example>
+
+=head1 PREREQUISITES
+
+    Util
+    Scalar::Util
+    XML::Parser
+    XML::Simple
+
+    In addition, due to limited support for weak references
+    in older perls, Xelig only works with perl(s) >= 5.8.0
+
+=head1 INSTALLATION AND CONFIGURATION
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+=head1 SEE ALSO
+
+    Enhydra XMLC: http://xmlc.enhydra.org/
+    Struts:	  http://jakarta.apache.org/struts/
+
+=head1 AVOID
+
+    XSLT, Template::Toolkit, Mason, HTML::Template, PHP,
+    JSP, ASP, PageKit, EmbPerl, ePerl, ZPT, TAL &c.
+
+=head1 COPYRIGHT
+
+    Copyright (c) 2003 chocolateboy
+
+    This library is free software; you can redistribute
+    it and/or modify it under the same terms as Perl
+    itself. 
+
+=head1 BUGS
+
+    APIs are likely to change dramatically
+
+    No documentation/tutorial/FAQ/examples/tests
+
+=head1 AUTHOR
+
+    chocolateboy <chocolate.boy@email.com>
+
+=head1 VERSION
+
+    0.01
+
+=cut

@@ -1,0 +1,9 @@
+<example>
+    <foo id="foo">
+	<alpha id="alpha"></alpha>
+	<beta id="beta"></beta>
+	<gamma id="gamma"></gamma>
+	<delta id="delta"></delta>
+    </foo>
+    <bar id="bar"></bar>
+</example>

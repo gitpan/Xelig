@@ -1,0 +1,8 @@
+Revision history for Perl extension Xelig.
+
+0.01  Wed Dec 11 13:53:55 2002
+	- original version; created by h2xs 1.22 with options
+		-n Xelig
+	- separated documentation (such as it is) into Xelig.pod
+	- removed Xelig::SiteBuilder
+

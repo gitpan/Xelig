@@ -1,0 +1,11 @@
+Artistic
+Changes
+COPYING
+lib/Xelig.pm
+lib/Xelig.pod
+Makefile.PL
+MANIFEST
+README
+t/simple/out.xml
+t/simple/view.xml
+t/simple.t
