@@ -1,0 +1,12 @@
+<html>
+    <head>
+	<title id="title">Append: foo@bar.com</title>
+    </head>
+    <body bgcolor="#FFFFFF">
+	<center>
+	<form>
+	    <input value="foo@bar.com" id="email" type="hidden" />
+	</form>
+	</center>
+    </body>
+</html>

@@ -1,5 +1,17 @@
 Revision history for Perl extension Xelig.
 
+0.03  Fri Jul 04 12:53:19 2003
+	- Fixed bug that caused corrupt output if
+	  aliased content had leading or trailing space
+	  e.g. <alias from="foo"> bar </alias>
+	- Added new test (space_alias) to catch this in future
+	- Added "anonymous" attribute to template element e.g.
+	  <template id="foo" anonymous="false" />
+	  (synonyms: "no", "0") to allow clones to
+	  preserve their id attributes: supports
+	  cases where the id itself
+	  is being targeted
+
 0.02  Fri May 23 17:19:00 2003
 	- Cygwin CR/LF endings were breaking simple.t on Unix
 	- Fixed invalid representation of commented templates

@@ -1,0 +1,9 @@
+<controller>
+    <template re="*" />		<!-- everything with an id tag's a template -->
+    <template id="/">		<!-- set up aliases on the root template -->
+	<alias from="email">	<!-- multiplex email to title and email -->
+	    title/0=~$
+	    email/@value
+	</alias>
+    </template>
+</controller>

@@ -1,0 +1,12 @@
+<html>
+    <head>
+	<title id="title">Append: </title>
+    </head>
+    <body bgcolor="#FFFFFF">
+	<center>
+	<form>
+	    <input type="hidden" value="" id="email" />
+	</form>
+	</center>
+    </body>
+</html>

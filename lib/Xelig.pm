@@ -5,7 +5,7 @@ use warnings;
 
 use base qw(Exporter);
 our @EXPORT_OK = qw(MVC);
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 sub MVC {
     my ($model, $view, $controller_arg) = @_;
@@ -23,7 +23,7 @@ use warnings;
 use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
 use Util;
 use Carp qw(confess);
-use XML::Simple;
+use XML::Simple; $XML::Simple::PREFERRED_PARSER = 'XML::Parser'; # XML::SAX is evil
 
 sub new {
     my $class = shift;
@@ -409,7 +409,7 @@ use 5.008_000;
 
 use Data::Dumper; $Data::Dumper::Terse = $Data::Dumper::Indent = 1;
 use Carp qw(confess);
-use Util;
+use Util qw(ltrim rtrim); # trim()s to work around <alias ... /> bug (see handle_alias)
 use Scalar::Util qw(weaken isweak);
 
 sub new {
@@ -498,7 +498,7 @@ sub handle_alias { # expects ARRAY of HASHes
 	    unless (exists $hash->{from});
 	confess ("handle_alias: no 'to' defined")
 	    unless ((exists $hash->{to}) || (exists $hash->{'#'}));
-	$self->{ALIAS}->{$hash->{from}} = exists $hash->{to} ? $hash->{to} : $hash->{'#'};
+	$self->{ALIAS}->{$hash->{from}} = ltrim(rtrim(exists $hash->{to} ? $hash->{to} : $hash->{'#'}));
     }
     return $self;
 }
@@ -542,6 +542,16 @@ sub handle_show {
     confess ("handle_show: show not defined")
 	unless (defined $show);
     $self->show($show);
+    return $self;
+}
+
+sub handle_anonymous {
+    my ($self, $anonymous) = @_;
+    confess ("handle_anonymous: anonymity not defined")
+	unless (defined $anonymous);
+    confess ("handle_anonymous: invalid anonymity: expected SCALAR, got $anonymous")
+	if (ref $anonymous);
+    $self->{DO_NOT_ANONYMIZE} = 1 if ($anonymous =~ /0|false|no/);
     return $self;
 }
 
@@ -1021,7 +1031,7 @@ sub anonymize {
     my ($self, $inner) = @_;
     $inner = -1 unless ($inner);
     return $self if ($self->is_clone()); # See above
-    delete $self->{ATTRIBUTES}->{id};
+    delete $self->{ATTRIBUTES}->{id} unless ($self->{DO_NOT_ANONYMIZE});
     # took out the feeble attempt at unique clone identification
     # (by assigning sequential numbers to the clone field),
     # as export() uses the lightweight (i.e. fast) Util::clone() - which
@@ -1245,7 +1255,7 @@ sub xml {
 
 		# regex rather than split() so that we can ignore
 		# leading or trailing whitespace
-		my (@paths) = @{($split{$paths} ||= [ $paths =~ /\S+/g ])};
+		my (@paths) = @{($split{$paths} ||= [ $paths =~ /(\S+)/g ])};
 		for my $path (@paths) {
 		    my ($alias, $ignore) = @{$self}{qw(ALIAS IGNORE)};
 		    if (defined (my $aliased = $alias->{$path})) {

@@ -9,7 +9,7 @@ WriteMakefile(
 	'Util'		=> 0, # for clone (requires recent perl to clone weakrefs)
 	'Scalar::Util'	=> 0, # for weakrefs
 	'XML::Parser'	=> 0, # to parse View XML
-	'XML::Simple'	=> 0  # to parse Controller XML
+	'XML::Simple'	=> 1.08  # this is the earliest (non-beta) version to support XML::Simple::PREFERRED_PARSER
     }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (
